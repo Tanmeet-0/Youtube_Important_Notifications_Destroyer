@@ -1,6 +1,6 @@
 {
-    "name": "Youtube Important Notification Remover",
-    "description": "Removes the useless important section in the youtube notifications and mixes the notifications in the important section with the other notifications in chronological order.",
+    "name": "Youtube Important Notification Destroyer",
+    "description": "Deletes the useless important notifications section in youtube notifications, then displays the important notifications with the other notifications in newest to oldest order.",
     "manifest_version": 3,
     "version": "1.1",
     "action": { "default_popup": "./pages/settings.html" },

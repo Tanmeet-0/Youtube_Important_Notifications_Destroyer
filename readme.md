@@ -1,6 +1,6 @@
 # Youtube Important Notifications Destroyer
 
-A chrome browser extension that deletes the important notifications section in youtube notifications, then displays the important notifications with the other notifications in newest to oldest order.
+A chrome browser extension that deletes the useless important notifications section in youtube notifications, then displays the important notifications with the other notifications in newest to oldest order.
 
 
 If you still want to know what Youtube considers to be important notifications, choose to highlight
