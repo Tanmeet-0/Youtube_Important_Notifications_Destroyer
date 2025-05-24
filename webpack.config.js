@@ -4,7 +4,7 @@ const Path = require("path");
 module.exports = {
     entry: {
         restructure_notifications: "./src/restructure_notifications.ts",
-        settings: "./src/settings.ts",
+        popup: "./src/popup.ts",
     },
     output: { filename: "[name].js", path: Path.resolve(__dirname, "scripts") },
     module: {
