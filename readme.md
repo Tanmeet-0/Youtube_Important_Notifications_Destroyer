@@ -8,7 +8,7 @@ the important notification so they stand out more than other notifications.
 
 Made using Typescript for the actual program, Webpack for the bundler and Node for Managing everything. 
 
-Currently figuring out hoe to publish an extension on the chrome web store.
+Currently figuring out how to publish an extension on the chrome web store.
 
 ## Supported Browsers
 
