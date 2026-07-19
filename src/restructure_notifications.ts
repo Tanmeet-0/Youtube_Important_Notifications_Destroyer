@@ -1,4 +1,8 @@
-import { Restructure_Notifications_Setting, Highlight_Important_Notifications_Setting } from "./settings";
+import {
+    Restructure_Notifications_Setting,
+    Highlight_Important_Notifications_Setting,
+    Highlight_Colour_Setting,
+} from "./settings";
 
 window.addEventListener("load", () => {
     let document_observer = new MutationObserver(observe_document_to_add_observer_to_notification_panel);
@@ -72,7 +76,7 @@ async function restructure_notifications() {
                     comparing_notification.insertAdjacentElement("beforebegin", notification);
                 }
             }
-            highlight_important_notifications();
+            await highlight_important_notifications();
         }
     }
 }
@@ -144,12 +148,16 @@ async function highlight_important_notifications() {
             if (important_notifications != null) {
                 for (let index = 0; index < important_notifications.length; index += 1) {
                     let notification = important_notifications[index] as HTMLElement;
-                    notification.style.backgroundColor = "purple";
+                    notification.style.backgroundColor = await Highlight_Colour_Setting.get_value();
                 }
             }
         }
     }
 }
+
+Highlight_Colour_Setting.add_on_changed_listener(async function () {
+    await highlight_important_notifications();
+});
 
 async function reset_important_notifications_highlight() {
     if (important_notifications != null) {

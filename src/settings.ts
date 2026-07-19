@@ -13,7 +13,8 @@ class Setting {
         await chrome.storage.local.set(storage_update);
     }
 
-    async get_or_set_default_value() {
+    async get_value() {
+        // if there is no value, default value is set and returned
         let storage_object = await chrome.storage.local.get(this.name);
         let value = storage_object[this.name];
         if (value === undefined) {
@@ -39,7 +40,7 @@ class Boolean_Setting extends Setting {
     }
 
     async is_enabled() {
-        return (await this.get_or_set_default_value()) as boolean;
+        return (await this.get_value()) as boolean;
     }
     async enable() {
         await this.set_value(true);
@@ -66,5 +67,6 @@ class Boolean_Setting extends Setting {
 
 const Restructure_Notifications_Setting = new Boolean_Setting("restructure_notifications", true);
 const Highlight_Important_Notifications_Setting = new Boolean_Setting("highlight_important_notifications", false);
+const Highlight_Colour_Setting = new Setting("highlight_colour","#880088");
 
-export { Restructure_Notifications_Setting, Highlight_Important_Notifications_Setting };
+export { Restructure_Notifications_Setting, Highlight_Important_Notifications_Setting, Highlight_Colour_Setting };
