@@ -10,6 +10,9 @@ module.exports = {
         rules: [{ test: /\.ts$/, use: "ts-loader" }],
     },
     resolve: { extensions: [".ts"] },
-    mode: "development",
+    mode: "production",
     devtool: false,
+    optimization:{
+        minimize:false,
+    },
 };
