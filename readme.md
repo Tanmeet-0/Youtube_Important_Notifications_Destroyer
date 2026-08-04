@@ -37,6 +37,6 @@ npm run build
 5. Enable developer mode in chrome and load the unpacked extension. See [https://developer.chrome.com/docs/extensions](https://developer.chrome.com/docs/extensions) for more info.
 
 ## TODO
-- publish
+- publish on mozilla, edge and other browsers
 - change rgb colour picker for highlight colour to an input with type colour
 - add internationalization
