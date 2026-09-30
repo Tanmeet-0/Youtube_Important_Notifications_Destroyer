@@ -2,7 +2,7 @@
     "name": "Youtube Important Notifications Destroyer",
     "description": "Remove the important section from Youtube Notifications and merge the important notifications with other notifications in order.",
     "manifest_version": 3,
-    "version": "4",
+    "version": "5",
     "action": { "default_popup": "./pages/popup.html" },
     "content_scripts": [
         {
