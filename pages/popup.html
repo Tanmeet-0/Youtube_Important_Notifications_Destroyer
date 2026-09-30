@@ -29,34 +29,8 @@
                 border-style: solid;
             }
 
-            #highlight_colour_box {
-                width: max-content;
-                justify-self: center;
-                font-size: xx-large;
-            }
-
             .section_break {
                 padding: 13px;
-            }
-
-            #highlight_colour_input_grid {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-            }
-
-            .highlight_colour_part_title {
-                text-align: right;
-                font-size: medium;
-                padding-block: 8px;
-            }
-
-            .highlight_colour_part_input {
-                width: 80%;
-            }
-
-            .highlight_colour_part_input__outside {
-                display: block;
-                align-content: center;
             }
         </style>
     </head>
@@ -74,37 +48,13 @@
         <button id="disable_highlighting_important_notification">NO</button>
         <div class="section_break"></div>
 
-        <h2> Highlight Colour</h2>
-        <div id="highlight_colour_box">
-            COLOUR
-        </div>
+        <h2>
+            <label for="highlight_color">
+                Highlight Colour
+            </label>
+        </h2>
+        <input id="highlight_color" type="color" alpha>
         <div class="section_break"></div>
-
-        <div id="highlight_colour_input_grid">
-            <label class="highlight_colour_part_title" for="highlight_colour_red_part">
-                RED
-            </label>
-            <div class="highlight_colour_part_input__outside">
-                <input type="range" min="0" max="255" step="1" id="highlight_colour_red_part"
-                    class="highlight_colour_part_input">
-            </div>
-
-            <label class="highlight_colour_part_title" for="highlight_colour_green_part">
-                GREEN
-            </label>
-            <div class="highlight_colour_part_input__outside">
-                <input type="range" min="0" max="255" step="1" id="highlight_colour_green_part"
-                    class="highlight_colour_part_input">
-            </div>
-
-            <label class="highlight_colour_part_title" for="highlight_colour_blue_part">
-                BLUE
-            </label>
-            <div class="highlight_colour_part_input__outside">
-                <input type="range" min="0" max="255" step="1" id="highlight_colour_blue_part"
-                    class="highlight_colour_part_input">
-            </div>
-        </div>
     </body>
 
 </html>

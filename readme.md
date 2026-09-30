@@ -38,5 +38,4 @@ npm run build
 
 ## TODO
 - publish on mozilla, edge and other browsers
-- change rgb colour picker for highlight colour to an input with type colour
 - add internationalization
