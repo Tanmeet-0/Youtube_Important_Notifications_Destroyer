@@ -3,9 +3,19 @@
     <head>
         <title>Youtube Important Notifications Destroyer</title>
         <style>
+            :root {
+                --hover_brightness: 1.15;
+                /* 1 = 100% = no changes */
+
+                --bg_colour: black;
+                --text_colour: white;
+                --button_colour: rebeccapurple;
+                --outline_colour: green;
+            }
+
             body {
-                background-color: black;
-                color: white;
+                background-color: var(--bg_colour);
+                color: var(--text_colour);
                 width: 400px;
                 text-align: center;
                 margin-top: 15px;
@@ -13,25 +23,85 @@
                 font-family: Verdana;
             }
 
+            .section_break {
+                padding: 10px;
+            }
+
             button {
-                background-color: rebeccapurple;
-                border-style: solid;
-                border-width: 4;
-                margin-left: 5px;
-                margin-right: 5px;
+                position: relative;
+                width: 80px;
+                height: 40px;
+                margin-inline: 10px;
                 padding-top: 2px;
-                color: white;
+                background-color: var(--button_colour);
+                border: 5px solid var(--bg_colour);
+                color: var(--text_colour);
+            }
+
+            @media (hover: hover) {
+                button:not([disabled]):hover {
+                    background-color: rgb(from var(--button_colour) calc(r * var(--hover_brightness)) calc(g * var(--hover_brightness)) calc(b * var(--hover_brightness)));
+                    /*  using filter: brightness applies the brightness effect to the button and the border,
+                        workaround to apply the brightness effect only to the button    */
+
+                    cursor: pointer;
+                }
             }
 
             button.selected {
-                border-color: green;
-                border-width: 4;
-                border-style: solid;
+                border: 5px solid var(--outline_colour);
             }
 
-            .section_break {
-                padding: 13px;
+            input#highlight_colour {
+                position: relative;
+                width: 150px;
+                height: 50px;
+                border-radius: 15px;
+                padding: 0;
+                border: none;
+                overflow: hidden;
             }
+
+            input#highlight_colour::-moz-color-swatch {
+                border: none;
+                border-radius: 0px;
+                overflow: hidden;
+            }
+
+            input#highlight_colour::-webkit-color-swatch-wrapper {
+                padding: 0;
+                border-radius: 0px;
+                overflow: hidden;
+            }
+
+            input#highlight_colour::-webkit-color-swatch {
+                border: none;
+            }
+
+            input#highlight_colour::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -5px;
+                top: -5px;
+                width: 150px;
+                height: 50px;
+                border-radius: 15px;
+                padding: 0;
+                border: none;
+            }
+
+            input#highlight_colour:hover {
+                filter: brightness(var(--hover_brightness));
+            }
+
+            #colour_input_outline {
+                display: inline-block;
+                border: 7px solid rgb(200, 200, 200);
+                border-radius: 22px;
+            }
+
+            /* button and input elements styling thanks to https://antvil.github.io/css-sos/index.html */
         </style>
     </head>
 
@@ -48,12 +118,10 @@
         <button id="disable_highlighting_important_notification">NO</button>
         <div class="section_break"></div>
 
-        <h2>
-            <label for="highlight_color">
-                Highlight Colour
-            </label>
-        </h2>
-        <input id="highlight_color" type="color" alpha>
+        <h2> Highlight Colour </h2>
+        <div id="colour_input_outline">
+            <input id="highlight_colour" type="color" alpha name="highlight_colour">
+        </div>
         <div class="section_break"></div>
     </body>
 
