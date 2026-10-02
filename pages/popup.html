@@ -38,6 +38,10 @@
                 color: var(--text_colour);
             }
 
+            button.selected {
+                border: 5px solid var(--outline_colour);
+            }
+
             @media (hover: hover) {
                 button:not([disabled]):hover {
                     background-color: rgb(from var(--button_colour) calc(r * var(--hover_brightness)) calc(g * var(--hover_brightness)) calc(b * var(--hover_brightness)));
@@ -46,10 +50,11 @@
 
                     cursor: pointer;
                 }
-            }
 
-            button.selected {
-                border: 5px solid var(--outline_colour);
+                input#highlight_colour:hover {
+                    filter: brightness(var(--hover_brightness));
+                    cursor: pointer;
+                }
             }
 
             input#highlight_colour {
@@ -89,10 +94,6 @@
                 border-radius: 15px;
                 padding: 0;
                 border: none;
-            }
-
-            input#highlight_colour:hover {
-                filter: brightness(var(--hover_brightness));
             }
 
             #colour_input_outline {
